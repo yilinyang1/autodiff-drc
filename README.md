@@ -10,3 +10,19 @@ where
 - `output_path` is the folder to store the results. If it does not exit, will be created.
 - `delsa` is the flag of bool type. If set, delsa will be used to estimate the distribution of the degree of rate control. The input file should contain the lower and upper bound of the kinetic parameters.
 - `delsa_sample`: int flag specifies the number of samples generated over the uncertain range of the kinetic parameters.
+
+This code relies on following packages:
+- YAML
+- ArgParse
+- DifferentialEquations
+- DiffEqSensitivity
+- ForwardDiff
+- NPZ
+- GRUtils
+- Sobol
+- Statistics
+For the PO example, the command to generate the results are:
+```console
+julia run_drc.jl PO-input.yaml --output_path PO-output
+julia run_drc.jl PO-input-delsa.yaml --output_path PO-output-delsa --delsa
+```
