@@ -1,0 +1,119 @@
+---
+# Reactions, there should be a site type after each chemical species
+Reactions:
+- C3H6_gas + site_100 <-> C3H6-1_100
+- C3H6_gas + site_100 <-> C3H6-2_100
+- C3H6_gas + site_100 <-> C3H6-3_100
+- C3H6-1_100 + O_100 <-> C3H5_100 + OH_100
+- C3H6-2_100 + O_100 <-> OMP-1_100
+- C3H6-3_100 + O_100 <-> OMP-2_100
+- C3H5_100 + O_100 <-> C3H5O_100 + site_100
+- C3H5O_100 + OH_100 <-> C3H4O_100 + H2O_100
+- OMP-1_100 <-> PO-1_100 + site_100
+- OMP-2_100 <-> PO-2_100 + site_100
+- H2O_100 <-> H2O_gas + v_100
+- C3H4O_100 <-> C3H4O_gas + v_100
+- PO-1_100 <-> PO_gas + v_100
+- PO-2_100 <-> PO_gas + v_100
+- O2_100 + v_100 <-> O_100 + O-1_100
+- 2O-1_100 <-> O2_100 + site_100
+- O2_100 <-> O2_gas + site_100
+
+# Pressures for each gas-phase species
+Pressure: 
+  C3H6_gas: 0.1
+  O2_gas: 0.05
+  H2O_gas: 0.0
+  C3H4O_gas: 0.0
+  PO_gas: 0.0
+
+# coefficient of each reaction that sums to the overal reaction of interest.
+Rate_mask:  
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 1.0
+- 1.0
+- 0.0
+- 0.0
+- 0.0
+
+# Time from top to bottom: 
+# [start time, end time, time steps] for coverage calculation.
+# [start time, end time, time steps] for degree of rate control calculation.
+Time:
+- 0.0
+- 0.003
+- 301
+- 0.0
+- 0.003
+- 301
+
+# Initial coverages for each species_sitetype
+C0: 
+  site_100: 0.68
+  C3H6-1_100: 0.02
+  C3H6-2_100: 0.02
+  C3H6-3_100: 0.02
+  O_100: 0.02
+  C3H5_100: 0.02
+  OH_100: 0.02 
+  OMP-1_100: 0.02 
+  OMP-2_100: 0.02 
+  C3H5O_100: 0.02
+  C3H4O_100: 0.02 
+  H2O_100: 0.02
+  PO-1_100: 0.02
+  PO-2_100: 0.02
+  v_100: 0.02
+  O2_100: 0.02
+  O-1_100: 0.02
+
+# forward kinetic constants for each reaction in the same order as the reactions above
+kf:
+- 1.87e8
+- 1.87e8
+- 1.87e8
+- 1.8883185167968056e9
+- 1.322049155405556e7
+- 9.606108656999557e9
+- 1.0790409835530733e10
+- 3.930665236502143e7
+- 2.3091859525960427e7
+- 561418.3516964992
+- 218543.129742791
+- 9.818482331329404e11
+- 8480.066664476652
+- 2106.812489014142
+- 1.0e13
+- 1.0e13
+- 0.19579578392147623
+
+# Equilibrium constant for each reaction.
+K:
+- 0.3200776001873334
+- 10.40372197634553
+- 13.121524676913081
+- 2.732767674835581e10
+- 90853.07029698449
+- 1.8828894331792707e6
+- 1.492835002616191e9
+- 5.543477568325298e11
+- 350.58978957927326
+- 40.07010486794337
+- 0.0007668179990975123
+- 6060.791562549015
+- 5.333375260677139e-5
+- 1.3250393012667561e-5
+- 2.592779654046556e14
+- 7.83206922497337e11
+- 9.149335697265244e-10
